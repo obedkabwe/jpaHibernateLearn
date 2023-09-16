@@ -1,8 +1,18 @@
 package domaine;
 
-public class Person {
+import java.io.Serializable;
 
-	
+import javax.persistence.Table;
+
+
+
+@javax.persistence.Entity
+@Table(name = "person")
+public class Person implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@javax.persistence.Id
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
 	private String email;
